@@ -1,5 +1,5 @@
-React
+https://innaponomareva.github.io/phone_shop_redux/
 
-Redux
+Simple shop project with star rating and comments.
 
-See also Screens.pdf
+Created with create-react-app and redux.
