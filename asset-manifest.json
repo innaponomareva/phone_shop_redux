@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/phone_shop_redux/static/css/main.fb6967df.css",
+    "main.js": "/phone_shop_redux/static/js/main.c24b17e5.js",
+    "static/media/MaterialIcons-Regular.eot": "/phone_shop_redux/static/media/MaterialIcons-Regular.4674f8ded773cb03e824.eot",
+    "static/media/MaterialIcons-Regular.ttf": "/phone_shop_redux/static/media/MaterialIcons-Regular.5e7382c63da0098d634a.ttf",
+    "static/media/MaterialIcons-Regular.woff": "/phone_shop_redux/static/media/MaterialIcons-Regular.83bebaf37c09c7e1c3ee.woff",
+    "static/media/MaterialIcons-Regular.woff2": "/phone_shop_redux/static/media/MaterialIcons-Regular.cff684e59ffb052d72cb.woff2",
+    "index.html": "/phone_shop_redux/index.html",
+    "main.fb6967df.css.map": "/phone_shop_redux/static/css/main.fb6967df.css.map",
+    "main.c24b17e5.js.map": "/phone_shop_redux/static/js/main.c24b17e5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb6967df.css",
+    "static/js/main.c24b17e5.js"
+  ]
+}
