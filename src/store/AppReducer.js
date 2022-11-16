@@ -1,67 +1,76 @@
-import Types from './ActionTypes';
+import Types from "./ActionTypes";
 
-const init={
+const init = {
   products: loadItems(),
-  cart:[]
-}
+  cart: [],
+};
 
-export default function AppReducer(state=init,{type,payload}){
-  switch(type){
+export default function AppReducer(state = init, { type, payload }) {
+  switch (type) {
     case Types.add_to_cart:
-      let product = state.cart.find(item=>item.id === payload.id);
-      if(product){
-        let index = state.cart.findIndex(item=>item.id === payload.id);
+      let product = state.cart.find((item) => item.id === payload.id);
+      if (product) {
+        let index = state.cart.findIndex((item) => item.id === payload.id);
         let tmp = [...state.cart];
-        tmp[index] = {...product, count: product.count+1};
-        return{
+        tmp[index] = { ...product, count: product.count + 1 };
+        return {
           ...state,
-          cart: [...tmp]
-        }
+          cart: [...tmp],
+        };
       }
-      return{
+      return {
         ...state,
-        cart: [...state.cart, payload]
-      }
+        cart: [...state.cart, payload],
+      };
     case Types.remove_from_cart:
-      let index = state.cart.findIndex(item=>item.id === payload.id);
+      let index = state.cart.findIndex((item) => item.id === payload.id);
       let tmp = [...state.cart];
-      tmp.splice(index,1);
-      return{
+      tmp.splice(index, 1);
+      return {
         ...state,
-        cart: [...tmp]
-      }
+        cart: [...tmp],
+      };
     case Types.clear_cart:
-      return{
+      return {
         ...state,
-        cart: []
-      }
+        cart: [],
+      };
     case Types.add_new_product:
-      return{
+      return {
         ...state,
-        products: [...state.products, payload]
-      }
+        products: [...state.products, payload],
+      };
     case Types.add_comment:
       //console.log(payload);
-      const productIndex = state.products.findIndex(item => item.id === payload.id);
+      const productIndex = state.products.findIndex(
+        (item) => item.id === payload.id
+      );
       const array = [...state.products];
-      if(state.products[productIndex].comments){
+      if (state.products[productIndex].comments) {
         const comments = [...state.products[productIndex].comments];
-        array[productIndex] = {...array[productIndex], comments: [...comments, {...payload, count: comments.length + 1}]};
-        console.log('Next comment');
-      }else{
-        array[productIndex] = {...array[productIndex], comments: [{...payload}]};
-        console.log('First comment');
+        array[productIndex] = {
+          ...array[productIndex],
+          comments: [...comments, { ...payload, count: comments.length + 1 }],
+        };
+        console.log("Next comment");
+      } else {
+        array[productIndex] = {
+          ...array[productIndex],
+          comments: [{ ...payload }],
+        };
+        console.log("First comment");
       }
-      return{
+      return {
         ...state,
-        products:[...array]
-      }
-      
-    default: return state;
+        products: [...array],
+      };
+
+    default:
+      return state;
   }
 }
 
-function loadItems(){
+function loadItems() {
   return JSON.parse(`
   [
     {
